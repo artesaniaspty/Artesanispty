@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Artesanías Panamá - Comercio y Logística Global</title>
+  <meta name="description" content="Venta online de artesanías panameñas con distribución global. Planificación, aprovisionamiento, transporte, almacenamiento, distribución y gestión aduanera." />
+  <meta name="author" content="Proyecto académico" />
+  <!-- JSON-LD (datos estructurados básicos) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Artesanías Panamá - Comercio y Logística Global",
+    "url":"https://ejemplo.local/",
+    "description":"Venta online de artesanías panameñas con distribución global. Planificación, aprovisionamiento, transporte, almacenamiento y gestión aduanera."
+  }
+  </script>
+
+  <style>
+    /* Reset ligero */
+    :root{
+      --bg:#f8fafb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f766e;
+      --accent-2:#065f46;
+      --glass: rgba(255,255,255,0.7);
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg, var(--bg), #eef2f3);
+      color:#0f172a;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header{
+      background: linear-gradient(90deg, rgba(15,118,110,0.95), rgba(6,95,70,0.95));
+      color:white;
+      padding:28px 18px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+    .container{
+      max-width:1100px;
+      margin: 22px auto;
+      padding: 0 18px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      font-weight:600;
+      font-size:1.15rem;
+    }
+    .brand svg{width:48px;height:48px;flex-shrink:0}
+
+    nav{
+      margin-top:10px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .navlink{
+      color:rgba(255,255,255,0.92);
+      text-decoration:none;
+      font-weight:500;
+      padding:8px 12px;
+      border-radius:8px;
+      background:transparent;
+    }
+    .navlink:hover{background:rgba(255,255,255,0.06)}
+    main{margin-top:20px}
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      align-items:center;
+      margin-bottom:18px;
+    }
+    @media(min-width:900px){
+      .hero{grid-template-columns: 1fr 420px}
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 6px 20px rgba(12,18,26,0.06);
+    }
+    h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin-top:6px}
+
+    /* Grid para secciones */
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+    @media(min-width:880px){
+      .grid{grid-template-columns: 1fr 360px}
+    }
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:8px;
+    }
+    .section-title h2{font-size:1.05rem;margin:0}
+    .kpis{display:flex;gap:12px;flex-wrap:wrap}
+    .kpi{background:linear-gradient(180deg,#f8fffd,#ffffff);padding:10px;border-radius:10px;min-width:120px;text-align:center}
+    .kpi small{display:block;color:var(--muted)}
+
+    /* Styles para listas y tablas simples */
+    ul{padding-left:1.05rem}
+    dl{display:grid;grid-template-columns:120px 1fr;gap:6px 12px}
+    table{width:100%;border-collapse:collapse}
+    table th,table td{border:1px solid #e6eef0;padding:8px;text-align:left;font-size:0.95rem}
+    table th{background:#f1f6f6}
+
+    footer{margin:36px 0 60px;color:var(--muted);text-align:center;font-size:0.9rem}
+
+    /* botones */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      text-decoration:none;
+      padding:10px 14px;
+      border-radius:10px;
+      background:var(--accent);
+      color:white;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+    }
+    .btn.secondary{background:transparent;color:var(--accent-2);border:1px solid rgba(6,95,70,0.12)}
+
+    /* micro-interacciones */
+    .small{font-size:0.9rem;color:var(--muted)}
+    .muted{color:var(--muted)}
+    .pill{padding:6px 10px;border-radius:999px;border:1px solid #e6eef0;background:#fff;font-weight:600}
+
+    /* accesibilidad */
+    a:focus,button:focus{outline:3px solid #cfece7; outline-offset:2px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand" role="banner">
+        <!-- Icono simple -->
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="1" y="3" width="22" height="18" rx="3" fill="white" opacity="0.06"></rect>
+          <path d="M4 14c2-3 6-3 8 0 2-3 6-3 8 0" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"></path>
+          <circle cx="7" cy="9" r="0.9" fill="white"></circle>
+        </svg>
+        <div>
+          <div>Artesanías Panamá • Comercio Global</div>
+          <div class="small">Comercio electrónico y logística responsable</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <a class="navlink" href="#planificacion">Planificación</a>
+        <a class="navlink" href="#aprovisionamiento">Aprovisionamiento</a>
+        <a class="navlink" href="#transporte">Transporte</a>
+        <a class="navlink" href="#almacenamiento">Almacenamiento</a>
+        <a class="navlink" href="#aduanas">Gestión aduanera</a>
+        <a class="navlink" href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="maincontent">
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="card" role="region" aria-labelledby="titulo-hero">
+        <h1 id="titulo-hero">Venta online de artesanías panameñas con distribución global</h1>
+        <p class="lead">Plataforma y plan logístico orientado a exportar artesanías panameñas, preservando la trazabilidad, la calidad y la identidad cultural. Esta página presenta el marco operativo para planificación, aprovisionamiento, transporte, almacenamiento, distribución y gestión aduanera.</p>
+
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#planificacion">Ver Planificación</a>
+          <a class="btn secondary" href="#aduanas">Documentación aduanera</a>
+        </div>
+      </div>
+
+      <aside class="card" aria-labelledby="resumen-kpis">
+        <div class="section-title">
+          <h2 id="resumen-kpis">Resumen operativo</h2>
+        </div>
+
+        <div class="kpis" role="list">
+          <div class="kpi" role="listitem">
+            <div style="font-weight:700;font-size:1.1rem">50+</div>
+            <small>Artesanos asociados</small>
+          </div>
+          <div class="kpi" role="listitem">
+            <div style="font-weight:700;font-size:1.1rem">120 países</div>
+            <small>Mercados potenciales</small>
+          </div>
+          <div class="kpi" role="listitem">
+            <div style="font-weight:700;font-size:1.1rem">Trazabilidad</div>
+            <small>Origen y materiales</small>
+          </div>
+        </div>
+
+        <hr style="margin:12px 0;border:none;border-top:1px solid #eef4f4">
+
+        <div class="small muted">
+          Documento académico: <strong>Modelo operativo y plan logístico</strong><br>
+          Nivel: universitario • Enfoque: sostenibilidad y cumplimento.
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <!-- COLUMNA PRINCIPAL -->
+      <div>
+        <!-- Planificación -->
+        <article id="planificacion" class="card" role="article" aria-labelledby="h-planificacion">
+          <div class="section-title">
+            <h2 id="h-planificacion">Planificación</h2>
+            <span class="pill">Estrategia & KPI</span>
+          </div>
+
+          <p><strong>Resumen:</strong> La planificación abarca la identificación del portafolio de productos, segmentación de mercados internacionales, análisis de demanda por canal (B2C / B2B / marketplaces), planificación de capacidad productiva y diseño de una cadena de suministro sostenible.</p>
+
+          <h3>Elementos clave</h3>
+          <ul>
+            <li><strong>Análisis de mercado:</strong> priorizar mercados por facilidad logística, aranceles, y demanda cultural.</li>
+            <li><strong>Forecasting:</strong> modelos de previsión trimestral con señales estacionales (ferias, festividades) y lead times de producción.</li>
+            <li><strong>Plan de producción:</strong> acuerdos con talleres y cooperativas, capacidad mínima garantizada y políticas de lotes.</li>
+            <li><strong>KPIs sugeridos:</strong> precisión de forecast (%), OTIF (On Time In Full), costo logístico por unidad, tasa de devoluciones.</li>
+          </ul>
+
+          <h3>Flujo operativo (resumen)</h3>
+          <ol>
+            <li>Validación de colección y disponibilidad con artesanos.</li>
+            <li>Planificación de lotes y fechas de recolección.</li>
+            <li>Programación de transporte primario hacia centro logístico.</li>
+            <li>Control de calidad y etiquetado para exportación.</li>
+            <li>Despacho aduanero y envío internacional.</li>
+          </ol>
+        </article>
+
+        <!-- Aprovisionamiento -->
+        <article id="aprovisionamiento" class="card" role="article" aria-labelledby="h-aprovisionamiento" style="margin-top:16px">
+          <div class="section-title">
+            <h2 id="h-aprovisionamiento">Aprovisionamiento</h2>
+            <span class="pill">Sourcing y calidad</span>
+          </div>
+
+          <p><strong>Resumen:</strong> El aprovisionamiento garantiza materiales y piezas (materias primas: fibras, pigmentos, fibras naturales, empaques sostenibles) y la relación directa con los artesanos y proveedores locales para asegurar trazabilidad y justicia comercial.</p>
+
+          <h3>Políticas y contratos</h3>
+          <ul>
+            <li>Contratos marco con cooperativas que especifiquen tiempos, precios y cláusulas de calidad.</li>
+            <li>Política de pagos: anticipos y pago a entrega para proteger flujo de caja de los artesanos.</li>
+            <li>Sourcing sostenible: priorizar materiales certificados o de bajo impacto (ej. tintes naturales).</li>
+          </ul>
+
+          <h3>Control de calidad</h3>
+          <dl>
+            <dt>Inspección inicial</dt><dd>Revisión de parámetros dimensionales, color, acabado y embalaje.</dd>
+            <dt>Certificados</dt><dd>Origen, composición material y, cuando aplique, certificados organicos o artesanales.</dd>
+            <dt>Trazabilidad</dt><dd>ID de lote vinculado a perfil del artesano y fotos del proceso.</dd>
+          </dl>
+
+          <h3>Gestión de riesgos</h3>
+          <ul>
+            <li>Plan de contingencia por escasez de insumos.</li>
+            <li>Proveedores alternos prevalidos.</li>
+          </ul>
+        </article>
+
+        <!-- Transporte -->
+        <article id="transporte" class="card" role="article" aria-labelledby="h-transporte" style="margin-top:16px">
+          <div class="section-title">
+            <h2 id="h-transporte">Transporte</h2>
+            <span class="pill">Primario & multimodal</span>
+          </div>
+
+          <p><strong>Resumen:</strong> Estrategia multimodal (terrestre desde zonas productivas en Panamá hasta centros consolidación; marítimo y aéreo para exportación según urgencia y coste). Selección de partners logísticos bajo criterios: cumplimiento, seguro, experiencia en carga ligera y frágil.</p>
+
+          <h3>Consideraciones operativas</h3>
+          <ul>
+            <li><strong>Consolidación:</strong> agrupar pequeñas partidas en contenedores para optimizar flete.</li>
+            <li><strong>Empaque:</strong> embalaje protegido con materiales sostenibles y etiquetado con manejo frágil.</li>
+            <li><strong>Seguro:</strong> cobertura cargo en tránsito (CAA) y seguro de responsabilidad por daños.</li>
+            <li><strong>Incoterms:</strong> definir por cliente (DDP, DAP, FOB) y alinearlos con responsabilidades aduaneras.</li>
+          </ul>
+
+          <h3>Routing sugerido</h3>
+          <table aria-label="Rutas y tiempos">
+            <thead>
+              <tr><th>Ruta</th><th>Medio</th><th>Lead time estimado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Puntos rurales → Centro de consolidación (Ciudad de Panamá)</td><td>Terrestre</td><td>1–3 días</td></tr>
+              <tr><td>Panamá → EEUU (Puerto) → Última milla</td><td>Marítimo + terrestre</td><td>10–20 días</td></tr>
+              <tr><td>Panamá → Europa (aéreo premium)</td><td>Aéreo</td><td>3–7 días</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <!-- Almacenamiento y Distribución -->
+        <article id="almacenamiento" class="card" role="article" aria-labelledby="h-almacenamiento" style="margin-top:16px">
+          <div class="section-title">
+            <h2 id="h-almacenamiento">Almacenamiento y Distribución</h2>
+            <span class="pill">WMS y última milla</span>
+          </div>
+
+          <p><strong>Resumen:</strong> El centro logístico en Panamá actúa como nodo de consolidación, control de calidad y despacho. Recomendado usar un WMS (Warehouse Management System) que soporte lotes, trazabilidad y ubicación por bin.</p>
+
+          <h3>Operativa de almacén</h3>
+          <ul>
+            <li>Recepción y registro fotográfico del lote.</li>
+            <li>Etiquetado con código (SKU) y QR para trazabilidad.</li>
+            <li>Almacenamiento por familia de producto y por fragilidad.</li>
+            <li>Picking por pedido y embalaje específico según destino.</li>
+          </ul>
+
+          <h3>Distribución</h3>
+          <ul>
+            <li>Integración con plataformas de e-commerce y marketplaces (API para sincronizar stock y órdenes).</li>
+            <li>Opciones de envío: estándar internacional, exprés y envíos por suscripción (B2B recurrente).</li>
+            <li>Métricas: tiempo medio de preparación de pedido, coste por envío, tasa de entregas a tiempo.</li>
+          </ul>
+
+          <h3>Recomendaciones técnicas</h3>
+          <ul>
+            <li>WMS con módulos de control de calidad y devoluciones.</li>
+            <li>ERP ligero para finanzas y conciliación de pagos.</li>
+            <li>Integración con herramientas de seguimiento y notificaciones (track & trace).</li>
+          </ul>
+        </article>
+
+        <!-- Gestión aduanera y documentación -->
+        <article id="aduanas" class="card" role="article" aria-labelledby="h-aduanas" style="margin-top:16px">
+          <div class="section-title">
+            <h2 id="h-aduanas">Gestión aduanera y Documentación</h2>
+            <span class="pill">Cumplimiento internacional</span>
+          </div>
+
+          <p><strong>Resumen:</strong> La gestión aduanera es crítica: clasificación arancelaria, valoración, permisos de exportación e importación, certificados (origen, fitosanitarios si aplica), y documentación comercial (factura comercial, packing list, certificado de origen, documentos de transporte).</p>
+
+          <h3>Documentos básicos por exportación</h3>
+          <ul>
+            <li><strong>Factura comercial:</strong> valor, descripción detallada, incoterm, vendedor/comprador.</li>
+            <li><strong>Packing list:</strong> ítems, dimensiones, peso bruto/neto, volumen.</li>
+            <li><strong>Conocimiento de embarque (B/L) / Guía aérea (AWB):</strong> según medio de transporte.</li>
+            <li><strong>Certificado de origen:</strong> cuando el comprador o regla preferencial lo requiera.</li>
+            <li><strong>Declaración de exportación:</strong> formulario solicitado por la Autoridad Nacional de Aduanas de Panamá y autoridades receptoras si corresponde.</li>
+            <li><strong>Comprobantes de seguro:</strong> póliza o certificación del seguro de carga.</li>
+          </ul>
+
+          <h3>Aspectos aduaneros y recomendaciones</h3>
+          <ul>
+            <li>Clasificación arancelaria correcta (HS code) para cada producto; errores pueden causar retenciones.</li>
+            <li>Valoración: precios de transferencia y documentación soporte para evitar discrepancias en aduana.</li>
+            <li>Permisos especiales: algunos materiales naturales pueden requerir certificaciones (ej. madera, especies protegidas).</li>
+            <li>Utilizar agentes de aduana con experiencia en exportación de artesanías para mercados objetivo.</li>
+            <li>Registro y archivo digital de todos los documentos por al menos 5 años.</li>
+          </ul>
+
+          <h3>Checklist de salida (pre-despacho)</h3>
+          <ol>
+            <li>Inspección final de calidad y embalaje.</li>
+            <li>Generación de packing list y facturación.</li>
+            <li>Reserva de espacio con transportista y emisión AWB / B/L.</li>
+            <li>Presentación de declaración de exportación ante Aduanas Panamá.</li>
+            <li>Confirmación de seguro y envío de documentación al destinatario y agente aduanal.</li>
+          </ol>
+        </article>
+
+        <!-- Sección de valor académico / referencias -->
+        <article class="card" style="margin-top:16px" aria-labelledby="h-academico">
+          <h2 id="h-academico">Nivel académico — Consideraciones metodológicas</h2>
+          <p>Este plan operativo integra conceptos de gestión de la cadena de suministro, logística internacional y comercio exterior. Para trabajo universitario puede ampliarse con:</p>
+          <ul>
+            <li>Modelado de costos logísticos (costeo por orden y costeo por unidad).</li>
+            <li>Análisis estadístico de demanda y simulación de inventario (EOQ, ROP).</li>
+            <li>Impacto social y evaluación de sostenibilidad (análisis LCA y certificaciones).</li>
+            <li>Estudio de caso aplicado a una cooperativa real o simulada.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- COLUMNA LATERAL -->
+      <aside>
+        <div class="card" role="complementary" aria-labelledby="h-recursos">
+          <h2 id="h-recursos">Recursos rápidos</h2>
+          <p class="small">Plantillas y checklists para descargar (pega y usa en tu proyecto).</p>
+
+          <h3 class="small">Checklist exportación (resumen)</h3>
+          <ul>
+            <li>Factura comercial ✔</li>
+            <li>Packing list ✔</li>
+            <li>Certificados de origen (si aplica) ✔</li>
+            <li>Declaración de exportación ✔</li>
+            <li>Póliza de seguro ✔</li>
+            <li>Información del consignatario / incoterm ✔</li>
+          </ul>
+
+          <h3 class="small" style="margin-top:10px">Plantillas sugeridas</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn secondary" href="#" onclick="alert('Reemplaza por link de descarga o integra tu CMS')">Plantilla: Factura</a>
+            <a class="btn secondary" href="#" onclick="alert('Reemplaza por link de descarga o integra tu CMS')">Packing list</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Glosario</h3>
+          <dl>
+            <dt>Incoterm</dt><dd>Condición internacional que define responsabilidades entre comprador y vendedor.</dd>
+            <dt>HS code</dt><dd>Arancel armonizado para clasificar mercancías.</dd>
+            <dt>WMS</dt><dd>Warehouse Management System — sistema de gestión de almacenes.</dd>
+          </dl>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h3>Contacto académico</h3>
+          <p class="small">Si este documento se usa para un trabajo universitario, puedo ayudarte a:</p>
+          <ul class="small">
+            <li>Generar bibliografía y referencias APA/IEEE.</li>
+            <li>Crear presentaciones (PowerPoint) y diagramas de flujo.</li>
+            <li>Desarrollar modelos cuantitativos (EOQ, simulaciones).</li>
+          </ul>
+          <a class="btn" href="#contacto">Solicitar ayuda</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="card" style="margin-top:18px" aria-labelledby="h-contacto">
+      <h2 id="h-contacto">Contacto y próximos pasos</h2>
+      <p>¿Quieres que transforme esto en una página funcional con formulario de pedidos, integración con pasarela de pago y panel administrativo? Puedo preparar:</p>
+      <ul>
+        <li>Versión HTML/CSS/JS con formulario y validación.</li>
+        <li>Integración con plataformas (Shopify, WooCommerce, Mercado Shops) o solución headless.</li>
+        <li>Plan técnico para despliegue y pruebas (SLA para logística).</li>
+      </ul>
+
+      <p class="small">Nota: reemplaza las etiquetas y botones por los datos reales (links a descargas, credenciales de APIs y contactos de agentes aduanales).</p>
+    </section>
+
+    <footer>
+      <div class="small muted">© Proyecto académico — Plan operativo para comercio de artesanías panameñas. Diseñado para uso educativo.</div>
+    </footer>
+  </main>
+</body>
+</html>
